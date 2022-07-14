@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example Ajax</title>
+</head>
+<body>
+     <!-- AJAX permite que pidamos una URL, ya sea una página o un archivo y capturemos su respuesta sin tener que estar navegando, sin tener que estar actualizando la página en la que estamos parados. -->
+    <h1>Ejemplo Ajax : JavaScript y XML Asincrónico</h1>
+    <div id="respuesta">AQUÍ VA A ESTAR LA RESPUESTA DEL AJAX</div>
+
+    <script>
+        var ajax = new XMLHttpRequest(); //aquí instaciamos
+        ajax.open('GET', 'ajax.php',true); //aquí inicializamos
+        ajax.onreadystatechange = function() {
+            if (readyState === 4) {
+                console.log('cambiando de estado: ' + ajax.readyState);
+            } else {
+                document.querySelector('#respuesta').innerHTML = 'espere...';
+            }
+        } // onreadystatechange es un evento
+        ajax.send(); //aquí ejecutamos el ajax y también si deseamos podemos enviar datos.
+    </script>
+    
+</body>
+</html>
+
+
+<!-- 
+AJAX : JavaScript y XML Asincrónico.
+
+XMLHttpRequest() es un objeto core, permite pedir archivos o URL's y capturar su respuesta.
+XMLHttpRequest() como todos los objetos tiene propiedades y métodos(funciones).
+
+Métodos
+- open(): este método recibe 3 argumentos -> ajax.open('GET/POST');
+    - 1er argumento: la petición va a ser por GET o POST.
+    - 2do argumento: que documento, archivo o URL es la que vamos a pedir a través de esta petición asincrónica.
+    - 3cer argumento: es un booleano(true o false). Si esta petición es asincrónica se tiene que poner true. Si no se ponen ningún argumento, el método open() toma true como argumento por default. "False" indica que será sincrónico, pero no es el propósito de usar AJAX, prácticamente no tiene sentido poner "false".
+
+- send(): Con este método ejecutados el ajax.
+
+PROPIEDADES
+- es una propiedad que se desencadena cada vez que cambia de fase/estado la petición realizada al ejecutar el método send().
+    - El objeto AJAX para por distintas instancias (establecer la conexión, pedir el archivo, recibir la respuesta), va pasando por distintas fases, todo esto se conoce como readyeState
+
+- readyState: Es la propiedad que tiene el estado actual de la petición.
+    - Estado "4" significa que la petición finalizó(ya terminó todo lo que se tenía que hacer) y ya puedo pedirle la respuesta al AJAX.
+
+EVENTOS
+- onreadystatechange: se ejecuta cada vez que se cambia de estado. Es un evento que establece el cambio de readystate.
+    - 
+
+-->

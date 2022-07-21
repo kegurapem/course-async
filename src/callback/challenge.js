@@ -2,7 +2,8 @@
 //XMLHTTP Request: Permite manejar de mejor forma las peticiones y es fundamental del API de JavaScript. Permite hacer peticiones a recursos XML o JSON.
 
 const XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
-const API = 'https://api.escuelajs.co/api/v1';
+
+
 
 function fetchData(urlApi, callback) {
     let xhttp = new XMLHttpRequest();

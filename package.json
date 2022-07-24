@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/kegurapem/course-async#readme",
   "dependencies": {
+    "node-fetch": "^3.2.9",
     "xmlhttprequest": "^1.8.0"
-  }
+  },
+  "type": "module"
 }

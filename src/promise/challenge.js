@@ -29,6 +29,7 @@ fetchData(`${API}/products`)
     .then(category => {
         console.log(category.name);
     })
-    
+
     .catch(err => console.log(err))
     .finally(() => console.log('Finally'));
+
